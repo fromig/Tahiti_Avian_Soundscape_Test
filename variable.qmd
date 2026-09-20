@@ -7,10 +7,27 @@ format:
     css: colors.css
 editor: visual
 bibliography: references.bib
+execute:
+  # show code chunk output
+  include: true
+  # Show the code in the output
+  echo: false
+  # Show messages
+  message: false
+  # Show warnings
+  warning: false
+  # Cache code results
+  cache: true
 ---
 
 ```{r}
 data <- readxl::read_excel("data/Data_Globale_Tahiti.xlsx")
+library(sf)
+library(leaflet)
+library(ggspatial)
+library(viridis)
+library(tidyverse)
+library(ggplot2)
 ```
 ```{r}
 theme_soundscape <- function() {
@@ -40,8 +57,7 @@ theme_soundscape <- function() {
 
 
 ```{r}
-library(tidyverse)
-library(ggplot2)
+
 # Graphique HSA
 graph_hsa <- ggplot(data, aes(x = site, y = HSA, fill = HSA)) +
   geom_col(width = 0.8, na.rm = TRUE) +
@@ -82,12 +98,6 @@ graph_herb
 ```
 ```{r}
 cor(data$HSA,data$HERB)
-```
-```{r}
-library(sf)
-library(leaflet)
-library(ggspatial)
-library(viridis)
 ```
 
 ```{r}
@@ -144,3 +154,11 @@ sites_sf <- data %>%
 #  dpi = 300)
 ```
 
+::: {#fig-tahiti}
+```{r}
+#| label: tahiti
+knitr::include_graphics("images/carte_sites_tahiti.png")
+```
+
+Carte des 69 sites intégrés dans les enregistrements de paysage sonore. Les couleurs chaudes représentent les sites de plus haute altitude.
+:::
