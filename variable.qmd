@@ -1,6 +1,10 @@
 ---
 title: "variable"
-format: html
+format: 
+  docx:
+    toc: true
+  html:
+    css: colors.css
 editor: visual
 bibliography: references.bib
 ---
@@ -78,5 +82,65 @@ graph_herb
 ```
 ```{r}
 cor(data$HSA,data$HERB)
+```
+```{r}
+library(sf)
+library(leaflet)
+library(ggspatial)
+library(viridis)
+```
+
+```{r}
+sites_sf <- data %>%
+  mutate(
+    latitude = as.numeric(Latitude),
+    longitude = as.numeric(Longitude)
+  ) %>%
+  sf::st_as_sf(
+    coords = c("longitude", "latitude"),
+    crs = 4326
+  )
+```
+
+
+```{r}
+#ggplot() +
+  annotation_map_tile(
+    type = "osm",
+    zoom = 12
+  ) +
+  geom_sf(
+    data = sites_sf,
+    aes(color = Alt),
+    size = 4,
+    alpha = 0.9
+  ) +
+  geom_sf_text(
+    data = sites_sf,
+    aes(label = site),
+    size = 3,
+    nudge_y = 0.002
+  ) +
+  scale_color_viridis_c(
+    option = "C",
+    name = "Altitude (m)"
+  ) +
+  annotation_scale(location = "bl") +
+  annotation_north_arrow(
+    location = "tr",
+    style = north_arrow_fancy_orienteering()
+  ) +
+  labs(
+    x = "Longitude",
+    y = "Latitude"
+  ) +
+  theme_minimal()
+```
+```{r}
+#ggsave(
+#  "carte_sites_tahiti.png",
+#  width = 10,
+#  height = 8,
+#  dpi = 300)
 ```
 
