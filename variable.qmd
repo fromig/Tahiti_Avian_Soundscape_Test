@@ -1,5 +1,5 @@
 ---
-title: "variable"
+title: "Variable HSA et HERB"
 format: 
   docx:
     toc: true
@@ -55,21 +55,36 @@ theme_soundscape <- function() {
   )
 }
 ```
-#Méthode sur Google Earth
 
-Création d'un cercle de 100m de rayon autour de chaque enregistreur. Coorespond à une surface de 31416 m²
-Pour les polygones de HSA et HERB on zoom pour se représenter 1/3-1/4 du cercle. Angle de plan en zénithal pour casser l'angle de vue. On accumule ensuite les zones délimités en sommant les valeurs de surface (m²) de nos polygones
+## Méthode pour la prise de mesure Google Earth
 
-Attention à bien refaire les polygones pour les sites se chevauchant entre eux (ex: ILM)
+- La date des images de Google Earth varie entre le 15/07/2023 et le 02/03/2025.
 
-Pour les surfaces hors HSA, on prend bien en compte les canopées, même surplombant une route car important pour les oiseaux.
+- Un cercle de 100m de rayon est créé autour de chaque enregistreur, égalant une surface de 31416 m².
+  Pour les mesures des polygones (HSA et HERB) on zoom pour représenter 1/3-1/4 du cercle avec un angle de plan en zénithal.
 
-Flou entre les routes d'accès en terre et celles en graviers
-Flou pour les srufaces HERB, la fougère en altitude doit t'elle être considérée dedans? (Oui car zone vraiment herbacée peut ne pas représenter les mêmes habitats et communautés aviaires que les fougères (zone agricole/parc vs versant de vallée)), parfois séparation pas claire entre les deux.
+- On accumule ensuite les zones délimitées en sommant les valeurs de surface (m²) de nos polygones.
+  Attention à bien refaire les polygones pour les sites se chevauchant entre eux (ex: ILM)
 
+- Attention à bien prendre en compte les canopées, même surplombants une route car importants pour les oiseaux.
+
+- Flou entre les routes d'accès en terre et celles en graviers Flou pour les surfaces HERB et la fougère en altitude.
+  Doit-elle être considérée dedans ?
+  (Oui car zone vraiment herbacée peut ne pas représenter les mêmes habitats et communautés aviaires que les fougères (zone agricole/parc vs versant de vallée)), parfois séparation pas claire entre les deux.
+
+::: {#fig-fougere}
+```{r}
+#| label: fougere
+#| out-width: 70%
+knitr::include_graphics("images/fougere_et_herb.png")
+knitr::include_graphics("images/fougere.png")
+```
+
+Séparation parfois complexe entre les vraies zones herbacées et les végétations de fougère (PI_Belvedre_5).
+Les fougères peuvent représenter des surfaces importantes (OBelvedere_2).
+:::
 
 ```{r}
-
 # Graphique HSA
 graph_hsa <- ggplot(data, aes(x = site, y = HSA, fill = HSA)) +
   geom_col(width = 0.8, na.rm = TRUE) +
@@ -102,16 +117,18 @@ graph_herb <- ggplot(data, aes(x = site, y = HERB, fill = HERB)) +
   theme(
     axis.text.x = element_text(angle = 45, hjust = 1)
   )
+```
 
-
+::: {#fig-couvert}
+```{r}
 # Afficher les deux graphiques
 graph_hsa
 graph_herb
 ```
 
-```{r}
-cor(data$HSA,data$HERB)
-```
+Proportion de HSA et de couvert herbacé par site.
+Ces deux variables ne sont pas corrélées entre elles: "cor(HSA,HERB)" = 0.03168
+:::
 
 ```{r}
 sites_sf <- data %>%
