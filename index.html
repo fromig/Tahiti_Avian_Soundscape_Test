@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="fr-FR" xml:lang="fr-FR"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -14,10 +14,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -25,26 +28,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="index_files/libs/clipboard/clipboard.min.js"></script>
@@ -54,10 +38,10 @@ div.csl-indent {
 <script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="index_files/libs/quarto-html/anchor.min.js"></script>
 <link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="index_files/libs/bootstrap/bootstrap-094edc38e8731e4c1b3f7f08a5e43fc1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="index_files/libs/bootstrap/bootstrap-a4e28a151ec0c52cda9fef9a7fda4176.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
 
 <link rel="stylesheet" href="colors.css">
@@ -71,11 +55,7 @@ div.csl-indent {
     <h2 id="toc-title">Table des matières</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
-  <li><a href="#matériels-et-méthodes" id="toc-matériels-et-méthodes" class="nav-link" data-scroll-target="#matériels-et-méthodes"><span class="header-section-number">2</span> Matériels et Méthodes</a></li>
-  <li><a href="#résultats" id="toc-résultats" class="nav-link" data-scroll-target="#résultats"><span class="header-section-number">3</span> Résultats</a></li>
-  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion"><span class="header-section-number">4</span> Discussion</a></li>
-  <li><a href="#bibliography" id="toc-bibliography" class="nav-link" data-scroll-target="#bibliography">References</a></li>
+  <li><a href="#méthode-pour-la-prise-de-mesure-google-earth" id="toc-méthode-pour-la-prise-de-mesure-google-earth" class="nav-link active" data-scroll-target="#méthode-pour-la-prise-de-mesure-google-earth"><span class="header-section-number">1</span> Méthode pour la prise de mesure Google Earth</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Autres formats</h2><ul><li><a href="index.docx"><i class="bi bi-file-word"></i>MS Word</a></li><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF (stylisharticle)</a></li></ul></div></nav>
 </div>
@@ -92,7 +72,7 @@ div.csl-indent {
   <div class="quarto-title-meta-heading">Affiliation</div>
   
     <div class="quarto-title-meta-contents">
-    <p class="author"><a href="https://example.org/">Félix Romiguière</a> <a href="mailto:JD@example.org" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/0000-0000-0000-0000" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+    <p class="author"><a href="https://example.org/">Félix Romiguière</a> <a href="mailto:JD@example.org" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/0000-0000-0000-0000" class="quarto-title-author-orcid" aria-label="ORCID profile for Félix Romiguière"> <img alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
   </div>
   <div class="quarto-title-meta-contents">
         <p class="affiliation">
@@ -111,7 +91,7 @@ div.csl-indent {
 <div>
   <div class="abstract">
     <div class="block-title">Résumé</div>
-    <p>This document is only a demo explaining how to use the Stylish Article template.</p>
+    <p>Ce document est un test d’utilisation de git pour le projet Tahiti Soundscape</p>
   </div>
 </div>
 
@@ -125,152 +105,102 @@ div.csl-indent {
 </header>
 
 
-<section id="introduction" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
-<p>La question de la diversité des forêts tropicales fascine les écologues parce qu’elle a des enjeux très importants <span class="citation" data-cites="Gibson2011">(<a href="#ref-Gibson2011" role="doc-biblioref"><span class="nocase">Gibson et al.</span> 2011</a>)</span>. est qu’elle est difficile à comprendre <span class="citation" data-cites="Wright2002b">(<a href="#ref-Wright2002b" role="doc-biblioref">Wright 2002</a>)</span>.</p>
-<p>A l’heure des menaces sur la biodiversité <span class="citation" data-cites="Fadrique2026">(<a href="#ref-Fadrique2026" role="doc-biblioref"><span class="nocase">Fadrique et al.</span> 2026</a>)</span>, une connaissance plus détaillée de la diversité des forêts très étudiées est utile.</p>
-<p>Des modèles ont été publiés <span class="citation" data-cites="Liang2022">(<a href="#ref-Liang2022" role="doc-biblioref"><span class="nocase">Liang et al.</span> 2022</a>)</span>.</p>
-<p>Comparer la diversité de Paracou <span class="citation" data-cites="Gourlet-Fleury2004">(<a href="#ref-Gourlet-Fleury2004" role="doc-biblioref">Gourlet-Fleury et al. 2004</a>)</span> et de BCI <span class="citation" data-cites="Raby2017">(<a href="#ref-Raby2017" role="doc-biblioref">Raby 2017</a>)</span>.</p>
-</section>
-<section id="matériels-et-méthodes" class="level1 page-columns page-full" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Matériels et Méthodes</h1>
-<p>Nombre de Hill <span class="citation" data-cites="hill1973">(<a href="#ref-hill1973" role="doc-biblioref">Hill 1973</a>)</span></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<section id="méthode-pour-la-prise-de-mesure-google-earth" class="level1 page-columns page-full" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Méthode pour la prise de mesure Google Earth</h1>
 <ul>
-<li>Site de Paracou Comparer la diversité de Paracou <span class="citation" data-cites="Gourlet-Fleury2004">(<a href="#ref-Gourlet-Fleury2004" role="doc-biblioref">Gourlet-Fleury et al. 2004</a>)</span> et de BCI <span class="citation" data-cites="Raby2017">(<a href="#ref-Raby2017" role="doc-biblioref">Raby 2017</a>)</span>.</li>
-<li>Site de BCI</li>
-<li>Les analyses sont réalisées avec R <span class="citation" data-cites="R">(<a href="#ref-R" role="doc-biblioref">R Core Team 2026</a>)</span> et le package divent <span class="citation" data-cites="Marcon2026a">(<a href="#ref-Marcon2026a" role="doc-biblioref">Marcon et Puech under review</a>)</span>.</li>
+<li><p>La date des images de Google Earth varie entre le 15/07/2023 et le 02/03/2025.</p></li>
+<li><p>Un cercle de 100m de rayon est créé autour de chaque enregistreur, égalant une surface de 31416 m². Pour les mesures des polygones (HSA et HERB) on zoom pour représenter 1/3-1/4 du cercle avec un angle de plan en zénithal.</p></li>
+<li><p>On accumule ensuite les zones délimitées en sommant les valeurs de surface (m²) de nos polygones. Attention à bien refaire les polygones pour les sites se chevauchant entre eux (ex: ILM)</p></li>
+<li><p>Attention à bien prendre en compte les canopées, même surplombants une route car importants pour les oiseaux.</p></li>
+<li><p>Flou entre les routes d’accès en terre et celles en graviers Flou pour les surfaces HERB et la fougère en altitude. Doit-elle être considérée dedans ? (Oui car zone vraiment herbacée peut ne pas représenter les mêmes habitats et communautés aviaires que les fougères (zone agricole/parc vs versant de vallée)), parfois séparation pas claire entre les deux.</p></li>
 </ul>
-<ul>
-<li>Site Selection</li>
-</ul>
-<p>The sites and data used in this study comes from the work of Emma Pilleboue, who installed temporary acoustic recording unit (ARU) throughout her internship. After installation, the ARU recorded continuously during a period of several days varying between one full day and five full days, between the 15/02/2024 and 02/05/2024.</p>
-<p>In totals, 51 sites of Emma’s work are used for this study. The ARU were located at a minimal distance of approximately 200 meters and were in place following altitudinal or urban gradients in some cases. They were also classified into four main habitat type : Urban (4), Suburban (15), Rural (6), Forest(26). The habitats site are mostly forested landscapes or suburban areas, Urban and rural areas are less represented in the site selection.</p>
-<div id="fig-gradient" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full">
+<div id="fig-fougere" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full">
 <figure class="quarto-float quarto-float-fig figure page-columns page-full">
-<div aria-describedby="fig-gradient-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div aria-describedby="fig-fougere-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<p></p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="images/fougere_et_herb.png" class="img-fluid figure-img" style="width:70.0%"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="images/fougere.png" class="img-fluid figure-img" style="width:70.0%"></p>
 </figure>
 </div>
 </div>
 </div>
+<p></p>
 </div>
-<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-gradient-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Gradient d’HardSurfaceArea (%) et d’Altitude (m) en fonction des sites étudiés
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-fougere-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Séparation parfois complexe entre les vraies zones herbacées et les végétations de fougère (PI_Belvedre_5). Les fougères peuvent représenter des surfaces importantes (OBelvedere_2).
 </figcaption>
 </figure>
 </div>
-<p>Acoustic indices selection for better description and tests, use the website to have basic indices described <a href="https://ecohack.shinyapps.io/Acoustic_Index_Users_Guide/">here</a> <span class="citation" data-cites="bradfer-lawrence2025">(<a href="#ref-bradfer-lawrence2025" role="doc-biblioref">Bradfer-Lawrence et al. 2025</a>)</span></p>
-<div class="{fig-indice}">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="images/Capture%20d'écran%202026-08-18%20161213.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>Pattern expectation of selected indices <span class="citation" data-cites="sánchez-giraldo2021">(<a href="#ref-sánchez-giraldo2021" role="doc-biblioref">Sánchez-Giraldo et al. 2021</a>)</span></p>
-</div>
-<ul>
-<li>Analysis framework intended</li>
-</ul>
-<div id="fig-framework" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full">
+<p></p>
+<p></p>
+<div id="fig-couvert" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full">
 <figure class="quarto-float quarto-float-fig figure page-columns page-full">
-<div aria-describedby="fig-framework-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div aria-describedby="fig-couvert-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<p></p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="images/framework.png" class="img-fluid figure-img"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-4-2.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
+<p></p>
 </div>
-<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-framework-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Schéma d’analyse visé
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-couvert-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Proportion de HSA et de couvert herbacé par site. Ces deux variables ne sont pas corrélées entre elles: “cor(HSA,HERB)” = 0.03168
+</figcaption>
+</figure>
+</div>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<div id="fig-tahiti" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-tahiti-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<p></p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="images/carte_sites_tahiti.png" class="img-fluid figure-img" width="1500"></p>
+</figure>
+</div>
+</div>
+</div>
+<p></p>
+</div>
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-tahiti-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Carte des 69 sites intégrés dans les enregistrements de paysage sonore. Les couleurs chaudes représentent les sites de plus haute altitude.
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="résultats" class="level1 page-columns page-full" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Résultats</h1>
-<div id="fig-compa" class="quarto-float quarto-figure quarto-figure-center anchored page-columns page-full">
-<figure class="quarto-float quarto-float-fig figure page-columns page-full">
-<div aria-describedby="fig-compa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/compa-1.png" class="img-fluid figure-img" style="width:50.0%"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-compa-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Différence de valeurs de diversité en fonction de son ordre entre les sites de Paracou et BCI
-</figcaption>
-</figure>
-</div>
-</section>
-<section id="discussion" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Discussion</h1>
-<p><span class="citation" data-cites="MacArthur1967">MacArthur et Wilson (<a href="#ref-MacArthur1967" role="doc-biblioref">1967</a>)</span> montrent mathématiquement que la richesse spécifique (le nombre d’espèces) d’une île est un équilibre dynamique entre le taux d’immigration et le taux d’extinction, ce dernier étant directement dicté par la taille de l’île.</p>
-<p>BCI est une forêt secondarisée <span class="citation" data-cites="Raby2017">(<a href="#ref-Raby2017" role="doc-biblioref">Raby 2017</a>)</span>. Sa diversité pourrait être augmentée selon la théorie de la perturbation intermédiaire <span class="citation" data-cites="Connell1978">(<a href="#ref-Connell1978" role="doc-biblioref">Connell 1978</a>)</span>.</p>
-<p>Bonus sur la thématique Tahiti_Soundscape</p>
-</section>
-<section id="bibliography" class="level1 unnumbered">
 
-
-</section>
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
-<div id="ref-bradfer-lawrence2025" class="csl-entry" role="listitem">
-Bradfer-Lawrence, Tom, Brad Duthie, Carlos Abrahams, et al. 2025. <span>«&nbsp;The Acoustic Index User’s Guide: A Practical Manual for Defining, Generating and Understanding Current and Future Acoustic Indices&nbsp;»</span>. <em>Methods in Ecology and Evolution</em> 16 (6): 1040‑50. <a href="https://doi.org/10.1111/2041-210X.14357">https://doi.org/10.1111/2041-210X.14357</a>.
-</div>
-<div id="ref-Connell1978" class="csl-entry" role="listitem">
-Connell, Joseph H. 1978. <span>«&nbsp;Diversity in tropical rain forests and coral reefs&nbsp;»</span>. <em>Science</em> 199 (4335): 1302‑10. <a href="https://doi.org/10.1126/science.199.4335.1302">https://doi.org/10.1126/science.199.4335.1302</a>.
-</div>
-<div id="ref-Fadrique2026" class="csl-entry" role="listitem">
-<span class="nocase">Fadrique, B., F. Costa, F. Cuesta, et al.</span> 2026. <span>«&nbsp;Tree diversity is changing across tropical Andean and Amazonian forests in response to global change&nbsp;»</span>. <em>Nature Ecology &amp; Evolution</em> 10 (2): 267‑80. <a href="https://doi.org/10.1038/s41559-025-02956-5">https://doi.org/10.1038/s41559-025-02956-5</a>.
-</div>
-<div id="ref-Gibson2011" class="csl-entry" role="listitem">
-<span class="nocase">Gibson, Luke, Tien Ming Lee, Lian Pin Koh, et al.</span> 2011. <span>«&nbsp;Primary forests are irreplaceable for sustaining tropical biodiversity&nbsp;»</span>. <em>Nature</em> 478 (7369): 378‑81. <a href="https://doi.org/10.1038/nature10425">https://doi.org/10.1038/nature10425</a>.
-</div>
-<div id="ref-Gourlet-Fleury2004" class="csl-entry" role="listitem">
-Gourlet-Fleury, Sylvie, Jean Marc Guehl, et Olivier Laroussinie. 2004. <em>Ecology &amp; management of a neotropical rainforest. Lessons drawn from Paracou, a long-term experimental research site in French Guiana</em>. Elsevier.
-</div>
-<div id="ref-hill1973" class="csl-entry" role="listitem">
-Hill, M. O. 1973. <span>«&nbsp;Diversity and Evenness: A Unifying Notation and Its Consequences&nbsp;»</span>. <em>Ecology</em> 54 (2): 427‑32. <a href="https://doi.org/10.2307/1934352">https://doi.org/10.2307/1934352</a>.
-</div>
-<div id="ref-Liang2022" class="csl-entry" role="listitem">
-<span class="nocase">Liang, Jingjing, Javier G. P. Gamarra, Nicolas Picard, et al.</span> 2022. <span>«&nbsp;Co-limitation towards lower latitudes shapes global forest diversity gradients&nbsp;»</span>. <em>Nature Ecology &amp; Evolution</em> 6 (août): 1423‑37. <a href="https://doi.org/10.1038/s41559-022-01831-x">https://doi.org/10.1038/s41559-022-01831-x</a>.
-</div>
-<div id="ref-MacArthur1967" class="csl-entry" role="listitem">
-MacArthur, Robert H., et Edward O. Wilson. 1967. <em>The theory of island biogeography</em>. Monographs in population biology. Princeton University Press.
-</div>
-<div id="ref-Marcon2026a" class="csl-entry" role="listitem">
-Marcon, Eric, et Florence Puech. under review. <span>«&nbsp;divent: an <span>R</span> Package for Diversity Measures Based on Entropy&nbsp;»</span>. <em>Journal of Open Source Software</em>, under review.
-</div>
-<div id="ref-R" class="csl-entry" role="listitem">
-R Core Team. 2026. <em>R: A Language and Environment for Statistical Computing</em>. R Foundation for Statistical Computing. <a href="https://doi.org/10.32614/R.manuals">https://doi.org/10.32614/R.manuals</a>.
-</div>
-<div id="ref-Raby2017" class="csl-entry" role="listitem">
-Raby, Megan. 2017. <em>American tropics: the Caribbean roots of biodiversity science</em>. Flows, migrations, et exchanges. The University of North Carolina Press.
-</div>
-<div id="ref-sánchez-giraldo2021" class="csl-entry" role="listitem">
-Sánchez-Giraldo, Camilo, Camilo Correa Ayram, et Juan M. Daza. 2021. <span>«&nbsp;Environmental sound as a mirror of landscape ecological integrity in monitoring programs&nbsp;»</span>. <em>Perspectives in Ecology and Conservation</em> 19 (3): 319‑28. <a href="https://doi.org/10.1016/j.pecon.2021.04.003">https://doi.org/10.1016/j.pecon.2021.04.003</a>.
-</div>
-<div id="ref-Wright2002b" class="csl-entry" role="listitem">
-Wright, S. Joseph. 2002. <span>«&nbsp;Plant diversity in tropical forests: a review of mechanisms of species coexistence&nbsp;»</span>. <em>Oecologia</em> 130 (1): 1‑14. <a href="https://doi.org/10.1007/s004420100809">https://doi.org/10.1007/s004420100809</a>.
-</div>
-</div></section></div></main>
+</main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
