@@ -1,5 +1,82 @@
 ---
 title: "variable"
 format: html
+editor: visual
+bibliography: references.bib
 ---
+
+```{r}
+data <- readxl::read_excel("data/Data_Globale_Tahiti.xlsx")
+```
+```{r}
+theme_soundscape <- function() {
+  
+  theme_minimal() +
+    
+  theme(
+    panel.background = element_rect(fill = "#F8FAFC", colour = NA),
+    plot.background  = element_rect(fill = "#F8FAFC", colour = NA),
+
+    panel.grid.major.y = element_line(color = "#CBD5E1", linewidth = 0.4),
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor = element_blank(),
+
+    axis.text  = element_text(color = "#64748B", size = 11),
+    axis.title = element_text(color = "#64748B", size = 12, face = "bold"),
+
+    axis.line = element_line(color = "#64748B", linewidth = 0.5),
+    axis.ticks = element_line(color = "#64748B"),
+
+    legend.background = element_rect(fill = "#F8FAFC"),
+    legend.text = element_text(color = "#64748B"),
+    legend.title = element_text(color = "#64748B", face = "bold")
+  )
+}
+```
+
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+# Graphique HSA
+graph_hsa <- ggplot(data, aes(x = site, y = HSA, fill = HSA)) +
+  geom_col(width = 0.8, na.rm = TRUE) +
+  scale_fill_gradient(
+    low = "#DCEAF7",
+    high = "#1769AA",
+    name = "HSA"
+  ) +
+  labs(
+    x = "Site",
+    y = "Hard Surface Area (%)",
+  ) +
+  theme_soundscape() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1)
+  )
+# Graphique HERB
+graph_herb <- ggplot(data, aes(x = site, y = HERB, fill = HERB)) +
+  geom_col(width = 0.8, na.rm = TRUE) +
+  scale_fill_gradient(
+    low = "#E8F5E9",
+    high = "#2E7D32",
+    name = "HERB"
+  ) +
+  labs(
+    x = "Site",
+    y = "Herbaceous vegetation (%)",
+  ) +
+  theme_soundscape() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1)
+  )
+
+
+# Afficher les deux graphiques
+graph_hsa
+graph_herb
+```
+```{r}
+cor(data$HSA,data$HERB)
+```
 
