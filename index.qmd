@@ -67,7 +67,12 @@ packages_required <- c(
   # Add specific packages here
   "divent",
   "tidyverse", 
-  "vegan"
+  "vegan",
+  "readxl",
+  "sf",
+  "ggspatial",
+  "viridis",
+  "ggplot2"
 )
 # Already installed?
 packages_installed <- vapply(
@@ -126,7 +131,6 @@ set.seed(973)
 library(readxl)
 data <- readxl::read_excel("data/Data_Globale_Tahiti.xlsx")
 library(sf)
-library(leaflet)
 library(ggspatial)
 library(viridis)
 library(tidyverse)
