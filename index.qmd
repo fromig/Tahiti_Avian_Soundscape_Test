@@ -27,7 +27,7 @@ author:
     url: https://example.org/
 # Abstract and Keywords
 abstract: |
-  This document is only a demo explaining how to use the Stylish Article template.
+  Ce document est un test d'utilisation de git pour le projet Tahiti Soundscape
 keywords: [template, demo]
 # Bibliography
 reference-section-title: References
