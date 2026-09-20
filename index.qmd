@@ -122,182 +122,175 @@ knitr::opts_chunk$set(dev.args = list(bg = "transparent"))
 set.seed(973)
 ```
 
-# Introduction
-
-La question de la diversité des forêts tropicales fascine les écologues parce qu'elle a des enjeux très importants [@Gibson2011].
-est qu'elle est difficile à comprendre [@Wright2002b].
-
-A l'heure des menaces sur la biodiversité [@Fadrique2026], une connaissance plus détaillée de la diversité des forêts très étudiées est utile.
-
-Des modèles ont été publiés [@Liang2022].
-
-Comparer la diversité de Paracou [@Gourlet-Fleury2004] et de BCI [@Raby2017].
-
-# Matériels et Méthodes
-
-Nombre de Hill [@hill1973]
-
-- Site de Paracou Comparer la diversité de Paracou [@Gourlet-Fleury2004] et de BCI [@Raby2017].
-- Site de BCI
-- Les analyses sont réalisées avec R [@R] et le package divent [@Marcon2026a].
-
 ```{r}
-#| label: Paracou_BCI
-library("tidyverse")
-paracou6 <- read_csv2("data/Paracou6.csv")
-library("vegan")
-data(BCI)
-library("divent")
-BCI %>% 
-  # Création d'un objet "abundances"
-  as_abundances() %>% 
-  # Les poids des parcelles sont égaux
-  mutate(weight = 1) %>% 
-  # Regrouper toutes les parcelles
-  metacommunity() ->
-  BCI_50ha
+data <- readxl::read_excel("data/Data_Globale_Tahiti.xlsx")
+library(sf)
+library(leaflet)
+library(ggspatial)
+library(viridis)
+library(tidyverse)
+library(ggplot2)
 ```
 
-- Site Selection
-
-The sites and data used in this study comes from the work of Emma Pilleboue, who installed temporary acoustic recording unit (ARU) throughout her internship.
-After installation, the ARU recorded continuously during a period of several days varying between one full day and five full days, between the 15/02/2024 and 02/05/2024.
-rtgh
-In totals, 51 sites of Emma’s work are used for this study.
-The ARU were located at a minimal distance of approximately 200 meters and were in place following altitudinal or urban gradients in some cases.
-They were also classified into four main habitat type : Urban (4), Suburban (15), Rural (6), Forest(26).
-The habitats site are mostly forested landscapes or suburban areas, Urban and rural areas are less represented in the site selection.
-
-::: {#fig-gradient}
 ```{r}
-library(readxl)
-Data_Globale_Tahiti <- read_excel("data/Data_Globale_Tahiti.xlsx")
-#| label: gradient
-# On crée un index numérique pour l’axe x
-Data_Globale_Tahiti <- Data_Globale_Tahiti %>%
-  mutate(x_id = as.numeric(factor(Enr)))
-
-# Dataset pour les rectangles de fond
-communes_bg <- Data_Globale_Tahiti %>%
-  group_by(Commune) %>%
-  summarise(
-    xmin = min(x_id) - 0.5,
-    xmax = max(x_id) + 0.5
-  )
-# Coefficient pour mettre l'altitude à l'échelle des HSA
-coef_alt <- max(Data_Globale_Tahiti$`HSA`, na.rm = TRUE) /
-            max(Data_Globale_Tahiti$`Alt`, na.rm = TRUE)
-
-ggplot() +
-  # Fond coloré discret
-  geom_rect(data = communes_bg,
-            aes(xmin = xmin, xmax = xmax,
-                ymin = -Inf, ymax = Inf,
-                fill = Commune),
-            alpha = 0.08) +
-  
-  # Barres HSA
-  geom_col(data = Data_Globale_Tahiti,
-           aes(x = x_id, y = `HSA`),
-           fill = "grey40") +
-  
-  # Points altitude (mis à l’échelle)
-  geom_point(data = Data_Globale_Tahiti,
-             aes(x = x_id, y = `Alt` * coef_alt),
-             shape = 4,              # croix
-             color = "#E5989B",      # rouge pastel doux
-             size = 2,
-             stroke = 0.8,
-             alpha = 0.8) +
-  
-  scale_x_continuous(
-    breaks = Data_Globale_Tahiti$x_id,
-    labels = Data_Globale_Tahiti$Enr
-  ) +
-  geom_line(data = Data_Globale_Tahiti,
-          aes(x = x_id, y = `Alt`* coef_alt, group = 1),
-          color = "#E5989B",
-          linewidth = 0.7) +
-  
-  scale_y_continuous(
-    name = "Hard Surface Area (%)",
-    sec.axis = sec_axis(~ . / coef_alt,
-                        name = "Altitude (m)")
-  ) +
-  
-  scale_fill_brewer(palette = "Paired") +
-  
-  labs(x = "Site",
-       caption = "Gradient site") +
+theme_soundscape <- function() {
   
   theme_minimal() +
-    theme(legend.position = "none") +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+    
+  theme(
+    panel.background = element_rect(fill = "#F8FAFC", colour = NA),
+    plot.background  = element_rect(fill = "#F8FAFC", colour = NA),
+
+    panel.grid.major.y = element_line(color = "#CBD5E1", linewidth = 0.4),
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor = element_blank(),
+
+    axis.text  = element_text(color = "#64748B", size = 11),
+    axis.title = element_text(color = "#64748B", size = 12, face = "bold"),
+
+    axis.line = element_line(color = "#64748B", linewidth = 0.5),
+    axis.ticks = element_line(color = "#64748B"),
+
+    legend.background = element_rect(fill = "#F8FAFC"),
+    legend.text = element_text(color = "#64748B"),
+    legend.title = element_text(color = "#64748B", face = "bold")
+  )
+}
 ```
-Gradient d'HardSurfaceArea (%) et d'Altitude (m) en fonction des sites étudiés
+
+# Méthode pour la prise de mesure Google Earth
+
+- La date des images de Google Earth varie entre le 15/07/2023 et le 02/03/2025.
+
+- Un cercle de 100m de rayon est créé autour de chaque enregistreur, égalant une surface de 31416 m².
+  Pour les mesures des polygones (HSA et HERB) on zoom pour représenter 1/3-1/4 du cercle avec un angle de plan en zénithal.
+
+- On accumule ensuite les zones délimitées en sommant les valeurs de surface (m²) de nos polygones.
+  Attention à bien refaire les polygones pour les sites se chevauchant entre eux (ex: ILM)
+
+- Attention à bien prendre en compte les canopées, même surplombants une route car importants pour les oiseaux.
+
+- Flou entre les routes d'accès en terre et celles en graviers Flou pour les surfaces HERB et la fougère en altitude.
+  Doit-elle être considérée dedans ?
+  (Oui car zone vraiment herbacée peut ne pas représenter les mêmes habitats et communautés aviaires que les fougères (zone agricole/parc vs versant de vallée)), parfois séparation pas claire entre les deux.
+
+::: {#fig-fougere}
+```{r}
+#| label: fougere
+#| out-width: 70%
+knitr::include_graphics("images/fougere_et_herb.png")
+knitr::include_graphics("images/fougere.png")
+```
+
+Séparation parfois complexe entre les vraies zones herbacées et les végétations de fougère (PI_Belvedre_5).
+Les fougères peuvent représenter des surfaces importantes (OBelvedere_2).
 :::
 
-Acoustic indices selection for better description and tests, use the website to have basic indices described [here](https://ecohack.shinyapps.io/Acoustic_Index_Users_Guide/) [@bradfer-lawrence2025]
-
-
-::: {#fig-indice fig-env="figure*"}
 ```{r}
-#|label: indice
-knitr::include_graphics("images/indice.png")
+# Graphique HSA
+graph_hsa <- ggplot(data, aes(x = site, y = HSA, fill = HSA)) +
+  geom_col(width = 0.8, na.rm = TRUE) +
+  scale_fill_gradient(
+    low = "#DCEAF7",
+    high = "#1769AA",
+    name = "HSA"
+  ) +
+  labs(
+    x = "Site",
+    y = "Hard Surface Area (%)",
+  ) +
+  theme_soundscape() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1)
+  )
+# Graphique HERB
+graph_herb <- ggplot(data, aes(x = site, y = HERB, fill = HERB)) +
+  geom_col(width = 0.8, na.rm = TRUE) +
+  scale_fill_gradient(
+    low = "#E8F5E9",
+    high = "#2E7D32",
+    name = "HERB"
+  ) +
+  labs(
+    x = "Site",
+    y = "Herbaceous vegetation (%)",
+  ) +
+  theme_soundscape() +
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1)
+  )
 ```
 
+::: {#fig-couvert}
+```{r}
+# Afficher les deux graphiques
+graph_hsa
+graph_herb
+```
+
+Proportion de HSA et de couvert herbacé par site.
+Ces deux variables ne sont pas corrélées entre elles: "cor(HSA,HERB)" = 0.03168
 :::
 
-- Analysis framework intended
-
-::: {#fig-framework}
 ```{r}
-#| label: framework
-knitr::include_graphics("images/framework.png")
+sites_sf <- data %>%
+  mutate(
+    latitude = as.numeric(Latitude),
+    longitude = as.numeric(Longitude)
+  ) %>%
+  sf::st_as_sf(
+    coords = c("longitude", "latitude"),
+    crs = 4326
+  )
 ```
 
-Schéma d'analyse visé
+```{r}
+carte_sites_tahiti <- ggplot() +
+  annotation_map_tile(
+    type = "osm",
+    zoom = 12
+  ) +
+  geom_sf(
+    data = sites_sf,
+    aes(color = Alt),
+    size = 4,
+    alpha = 0.9
+  ) +
+  geom_sf_text(
+    data = sites_sf,
+    aes(label = site),
+    size = 3,
+    nudge_y = 0.002
+  ) +
+  scale_color_viridis_c(
+    option = "C",
+    name = "Altitude (m)"
+  ) +
+  annotation_scale(location = "bl") +
+  annotation_north_arrow(
+    location = "tr",
+    style = north_arrow_fancy_orienteering()
+  ) +
+  labs(
+    x = "Longitude",
+    y = "Latitude"
+  ) +
+  theme_minimal()
+
+#ggsave(
+#  "carte_sites_tahiti.png",
+#  width = 10,
+#  height = 8,
+#  dpi = 300)
+```
+
+::: {#fig-tahiti}
+```{r}
+#| label: tahiti
+knitr::include_graphics("images/carte_sites_tahiti.png")
+```
+
+Carte des 69 sites intégrés dans les enregistrements de paysage sonore.
+Les couleurs chaudes représentent les sites de plus haute altitude.
 :::
 
-# Résultats
-
-::: {#fig-compa}
-```{r}
-#| label: compa
-#| out-width: 50%
-paracou6 %>% 
-  # Vecteur des noms d'espèce de chaque arbre
-  pull(spName) %>% 
-  # Création d'un objet "abundances"
-  as_abundances() %>% 
-  # Ajout des données de BCI
-  bind_rows(BCI_50ha) %>% 
-  # Remplacement des NA par 0
-  mutate(across(everything(), ~ replace_na(.x, 0))) %>% 
-  # Nom des sites
-  mutate(site = c("Paracou", "BCI")) %>% 
-  # Profil de diversité avec enveloppe de confiance
-  profile_hill(n_simulations = 2) %>% 
-  # Figure
-  autoplot() +
-  # Titre de la légende
-  labs(color = "Forêt", linetype = "Forêt")
-```
-
-Différence de valeurs de diversité en fonction de son ordre entre les sites de Paracou et BCI
-:::
-
-# Discussion
-
-@MacArthur1967 montrent mathématiquement que la richesse spécifique (le nombre d'espèces) d'une île est un équilibre dynamique entre le taux d'immigration et le taux d'extinction, ce dernier étant directement dicté par la taille de l'île.
-
-BCI est une forêt secondarisée [@Raby2017].
-Sa diversité pourrait être augmentée selon la théorie de la perturbation intermédiaire [@Connell1978].
-
-Bonus sur la thématique Tahiti_Soundscape
-
-```{r}
-#| label: Tahiti
-library(readxl)
-Data_Globale_Tahiti <- read_excel("data/Data_Globale_Tahiti.xlsx")
-```
