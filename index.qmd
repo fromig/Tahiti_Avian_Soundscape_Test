@@ -123,6 +123,7 @@ set.seed(973)
 ```
 
 ```{r}
+library(readxl)
 data <- readxl::read_excel("data/Data_Globale_Tahiti.xlsx")
 library(sf)
 library(leaflet)
