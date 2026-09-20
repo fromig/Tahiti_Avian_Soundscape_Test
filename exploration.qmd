@@ -140,7 +140,7 @@ Sa diversité pourrait être augmentée selon la théorie de la perturbation int
 
 ```{r}
 library(readxl)
-Data_Globale_Tahiti <- read_excel("data/Excel_DataBrut/Data_Globale_Tahiti.xlsx")
+Data_Globale_Tahiti <- read_excel("data/Data_Globale_Tahiti.xlsx")
 ```
 
 Packages nécessaires pour les analyses
