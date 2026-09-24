@@ -20,3 +20,95 @@ execute:
   cache: true
 ---
 
+# Argument bib
+
+## Introduction
+
+[@deichmann2018], Militate for increased acoustic monitoring in tropical ecosystems
+
+[@pijanowski2011] with the first description of the 3 main types of sounds in the soundscape: The ‘soundscape’ includes all sounds emanating from any given habitat, which can be classified with respect to their source: geophony (climate and geography), biophony (all wildlife), and anthrophony (human activities), to be added technophony [@fuller2015] linked to the uses of machine from car to industrials
+
+Acoustic signals within the soundscape include sounds from living organisms (biophony), natural sounds from physical processes (geophony), and sounds caused by human activities (anthrophony) (Pijanowski et al., 2011).
+[@pijanowski2011]
+
+ Acoustic indices are a type of quantitative soundscape analyses used to rapidly assess ecosystem condition by deriving a numeric summary of the soundscape.
+Ecological meaning is inferred by relating acoustic indices to the diversity of vocalizing taxa via species richness or other diversity metrics (Gasc et al., 2013;Eldridge et al., 2018;Dröge et al., 2021) or to habitat quality via landscape or vegetation characteristics (Fuller et al., 2015;Sánchez-Giraldo et al., 2021;Sangermano, 2022).
+[@rudge2026]
+
+[@sánchez-giraldo2021] s incdreases use of combinations of the metrics to characterize soundscape and distinguish among varying habitat conditions and composition, such as bird assemblage metric [@shaw2021]
+
+[@shaw2021]Nevertheless, the testSpatialAutocorrelation function in DHARMa was used to test model residuals for spatial autocorrelation
+
+[@bota2024] pam and BirdNet detections of invasive amerianc bullfrog
+
+[@rountree2017] study of invasive fish via pam
+
+[@ribeiro2022] Uses of pam of AIS spatial distributions monitoring
+
+[@sueur2008] PAM for rapid surveys of biodiversity (could also use ribeiro 2017)
+
+[@buxton2018] shows difficulty with acoustic indices to have generalyse results across taxa and ecosystems
+
+What implications for Acoustic Niche hypothesis
+
+[@ross2023] Soundscape can provide indicators on the ecological processes or disturbances (cite plein d'artcile dont [@villanueva-rivera2011] [@deichmann2018], informe sur les reviews de dispo sur les PAM (la classique).
+Avantage des PAM car peut faire du multitaxon, multi-espèce, can do scaling up spatially and oenvironmental sound producing disturbance can be studied with the same equipment as affected organisms.
+Still challenges within and between species variability in signal strengh, detectability and frequency of calls (ex: One species may have more than one vocalisation).
+Importance of accounting the habitat as songs to not propogate uniformaly accros them.
+Target Soundscape are afffected by non-target sound, within geophony or anthropophony.
+
+[@ross2023] Limitations arise from Identifying species specific vocalisations from acoustic recordings provides evidence for species presence at a given time and location, but determining true absences is more challenging.
+Strong limitations from survey design [@wood2021], equipment [@gibb2019]analysis..
+
+Beyond geographical remoteness, PAM can also en able data acquisition during seasons of heightened inaccessibility, such as during floods or rainy seasons, which often coincide with important life-history stages for vocalising birds and mammals [@szymanski2021]
+
+PAM is increasingly used to map biodiversity in remote or challenging habitats such as tropical forest [@burivalova2019]
+
+[@gasc2018] In New Caledonian forests, the invasive ant Wasmannia auropunctata caused a reduction of local insect biodiversity, lead ing to impoverishment of the soundscape (\~80% cricket call decline;
+
+[@ross2023] lots of new directions for the study of fundamental questions with PAM...
+
+[@scarpelli2020] Tropical ecosystems remains largely understudied, the relation between acoustic rich, complex composition [@donascimento2020] and landscape integrity are lacking.
+
+Insular ecosystems offer the opportunity to studied this relationship within a less complex framework ( ) and
+
+Pattern expection..
+
+In this study we investigate the relationship between soundscape variation and the acoustic avian community.
+
+Birds introduced tends to be from specific families (e.g., Galliniformes,Columbidae, Fringillidae, Passeridae, Estrildidae and Sturnidae ..) introduced for hunting, aesthetic purposes with accidental or intentional releases of cage [@blackburn2001][@dyer2017]
+
+This species shows peculiar traits such as granivoes and are adapted to urban and agricultural landscapes, whereas native birds from oceanic island tends to include frugivore and insectivore species occuring in forests [@soares2021]
+
+In Tahiti a single man introduced lot of species ""
+
+requiring minimal manual parameter tuning and non invasive wildlife studies, monitor variety of cryptic and elusive species [@wrege2017] [@yusni2026]
+
+[@sueur2008] Acoustic indices can be rapidly extracted from hundreds of hours of recordings
+
+Limited studies on insular tropical terrestrial soundscape
+
+The acoustic habitat: The sonic context in which species are living
+
+\## M & M
+
+## Discussion
+
+*1erparagraphe*
+
+Rappel de l'enejux Our study shows relevant findings to the understanding of the relationship between soundscape ...
+Quel realtion du du soundscape et de l'habitat Et quel relation avec l'envionnement changeant de bird species
+
+*2emeparagraphe*
+
+Quel overall pattern entre les différences indices/focus sur l'indice qui fonctionne le mieux
+
+*paragrapheanalysis*
+
+In tropical landscapes, patterns in acoustic indices may depend on the sampling scheme, as a more number of recordings or longer sampling time tend to decrease the indices variation [@bradfer-lawrence2019]
+
+*paragrapheccl*
+
+Soundscape is very important for places for human relevantness to a place and for xhat bird species hear in their communication.
+Here, we aim to adress a discarded issue with introduced species having imapct on the ..
+of a place and on natve bird species

@@ -1,0 +1,77 @@
+---
+title: "Mat_Met"
+format: 
+  docx:
+    toc: true
+  html:
+    css: colors.css
+editor: visual
+bibliography: references.bib
+execute:
+  # show code chunk output
+  include: true
+  # Show the code in the output
+  echo: false
+  # Show messages
+  message: false
+  # Show warnings
+  warning: false
+  # Cache code results
+  cache: true
+---
+
+*Study area*
+
+The study was conducted in Tahiti, French Polynesia, a ..
+oceanic island.
+The vegetation are.....
+The climate displays ..., with average temperature variation ranging from ..
+°C to °C and rainfall precipitation varies ranging from ..
+mm to ...
+mm.
+Using data collection between 2024 and 2026, 69 sites were monitored.
+Main habitat classifiction range from Forest (n=..), Rural (n=...), Sub-urban (n=....) and Urban (n=...).
+
+*Acoustic data collection*
+
+Besoin d'un figure carte avec nos sites et le rayon quon considère autour de nos sites...
+avces au moins la composition urbaine ca serait cool.
+
+Acoustic data was collected from..
+to .., with SongMeter SM2 and SM4 digital recording devices (Wildlife Acoustics, Maynard, MA, USA).
+Devices were programmed to record continuously, 14 h a day, at a sampling rate of kHz.
+In each plot we collected within our data collection period, resulting in ...
+mean per site ( h total).
+
+*Soundscape index metrics*
+
+Using files cleaned of wind, rain, and device glitches, we computed six of the most common acoustic indices used for biodiversity monitoring from the ‘soundecology’ package in R (Villanueva-Rivera and Pijanowski, 2018 soundecology), as multi-index studies with these indices have been shown to be more effective than single index investigations
+
+*Habitat metrics*
+
+A 100m radius circular plots was established for each ARUs positions using Google Earth ( )..
+The Hard Surface area (HSA) and open herbaceous cover (HERB) was estimated drawings polygon to estimate surfaces inside each circular plots.
+
+*Avian caracterisation*
+
+Felix point count surveys and automatic classifier detections.
+
+*Data analysis*
+
+All statistical analyses were performed in R v.().
+To investigate the relationship between acoustic indices and the metrics of avian composition, we used generalized linear mixed-effects models (GLMER) to model each acoustic index (....) individually as response variable, one assemblage metric at a time, the hard surface area and open herbaceaous cover as independant fixed effect, and sites and commune as random effects.
+Models included the a control fixed effect for the time (hour of the day to account for temporal autocorrelation. Models uses a ... distribution with a ... function
+
+*Bird assemblage metrics in response to habitat characteristic*
+
+Hbaitat parameters as direct drivers of bird assemblage was investigated using habitat variables as independant variables in GLMER).
+The assemblage for species richness and native species presence or absence were each modelled independently as response variables using ...
+distributions.
+All GLMER were made using the "..."package (bib..)
+
+*Acoustic indices in response to bird assemblage and habitat*
+
+To investigate if acoustic indices relfect metrics of native/introduced bird assemblage, GLMER were used to model each acoustic indices individually in reponse to the following independant variables: one assembalge metric at a time, hsa and herbaceous cover.
+All models used a ...
+distribution with a ...
+function.

@@ -1,0 +1,32 @@
+---
+title: "introduction"
+format: 
+  docx:
+    toc: true
+  html:
+    css: colors.css
+editor: visual
+bibliography: references.bib
+execute:
+  # show code chunk output
+  include: true
+  # Show the code in the output
+  echo: false
+  # Show messages
+  message: false
+  # Show warnings
+  warning: false
+  # Cache code results
+  cache: true
+---
+
+General context of Soundscape and ecoacoustic..
+
+That in indular environment
+
+Description and Influence en introduced species in insular ecosystems
+
+Role wihtin soundscape and theory of acoustic ncihes about bird species and human In TAHITI
+
+Aims of the study, point of the stdy and big questions
+
