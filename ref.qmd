@@ -24,73 +24,101 @@ execute:
 
 ## Introduction
 
-[@deichmann2018], Militate for increased acoustic monitoring in tropical ecosystems
+- [@deichmann2018], Militate for increased passive acoustic monitoring in tropical ecosystems
 
-[@pijanowski2011] with the first description of the 3 main types of sounds in the soundscape: The ‘soundscape’ includes all sounds emanating from any given habitat, which can be classified with respect to their source: geophony (climate and geography), biophony (all wildlife), and anthrophony (human activities), to be added technophony [@fuller2015] linked to the uses of machine from car to industrials
+-  The ‘soundscape’ incorpore all sounds emanating from any given habitat.
+  it can be classified according to the source of the acoustic signal: geophony (climate and geography), biophony (all living organisms), and anthrophony (human activities) [@pijanowski2011].
+  The latter incorporates technophony (machinary noises) [@fuller2015]
 
-Acoustic signals within the soundscape include sounds from living organisms (biophony), natural sounds from physical processes (geophony), and sounds caused by human activities (anthrophony) (Pijanowski et al., 2011).
-[@pijanowski2011]
+- Advance in Soudscape ecology, enabled some better understanding of the structure and dynamics of the sonic environment [@pijanowski2011] a,b?.
 
- Acoustic indices are a type of quantitative soundscape analyses used to rapidly assess ecosystem condition by deriving a numeric summary of the soundscape.
-Ecological meaning is inferred by relating acoustic indices to the diversity of vocalizing taxa via species richness or other diversity metrics (Gasc et al., 2013;Eldridge et al., 2018;Dröge et al., 2021) or to habitat quality via landscape or vegetation characteristics (Fuller et al., 2015;Sánchez-Giraldo et al., 2021;Sangermano, 2022).
-[@rudge2026]
+- The Soundscape approach consider all components and analysed the sonic patterns emerging from the relations of sound sources and habitat topologies [@fuller2015] and temporal dynamics (Gage and Axel, 2014) [@farina2016]
 
-[@sánchez-giraldo2021] s incdreases use of combinations of the metrics to characterize soundscape and distinguish among varying habitat conditions and composition, such as bird assemblage metric [@shaw2021]
+- Acoustic indices are used for quantitative soundscape analyses to monitor ecosystem condition via a numeric summary of the soundscape.
+  Ecological meaning is inferred by relating acoustic indices to diversity metrics (Gasc et al., 2013;[@dröge2021]Eldridge et al., 2018; or to habitat quality([@fuller2015] [@sánchez-giraldo2021]) [@rudge2026]
 
-[@shaw2021]Nevertheless, the testSpatialAutocorrelation function in DHARMa was used to test model residuals for spatial autocorrelation
+- Acoustic indices uses in combinations to characterise soundscape and distinguish among habitat conditions or diversity metrics [@sánchez-giraldo2021]
 
-[@bota2024] pam and BirdNet detections of invasive amerianc bullfrog
+- The acoustic signature of each species can be used to measure the acoustic niche overlap and breadth of the entire community (e.g. Sinsch et al., 2012).
+  At every hourly interval different species interact acoustically, confirming the dynamic character of an acoustic community.
+  [@farina2016]
 
-[@rountree2017] study of invasive fish via pam
+[@malavasi2012] From empirical observations it is known that species can limit acoustic overlap in both frequency and time (Malavasi and Farina, 2013).
+This frequency/time partitioning is conceptualized by the acoustic niche hypothesis (ANH).
 
-[@ribeiro2022] Uses of pam of AIS spatial distributions monitoring
+- Invasive species monitoring via pam are scarce (invasive amerianc bullfrog[@bota2024]; invasive fish [@rountree2017]; invasive bird [@wood2020])
 
-[@sueur2008] PAM for rapid surveys of biodiversity (could also use ribeiro 2017)
+- Alien Invasive species monitoring via pam [@ribeiro2022]
 
-[@buxton2018] shows difficulty with acoustic indices to have generalyse results across taxa and ecosystems
+- PAM for rapid surveys of biodiversity, acoustic indices can be rapidly extracted from hundreds of hours of recordings [@sueur2008]
+
+- Soundscape can provide indicators on the ecological processes or disturbances (cite plein d'artcile dont [@villanueva-rivera2011] [@deichmann2018]. Nevertheless, acoustic indices struggle to have generalasible results across taxa and ecosystems [@buxton2018]
 
 What implications for Acoustic Niche hypothesis
 
-[@ross2023] Soundscape can provide indicators on the ecological processes or disturbances (cite plein d'artcile dont [@villanueva-rivera2011] [@deichmann2018], informe sur les reviews de dispo sur les PAM (la classique).
-Avantage des PAM car peut faire du multitaxon, multi-espèce, can do scaling up spatially and oenvironmental sound producing disturbance can be studied with the same equipment as affected organisms.
-Still challenges within and between species variability in signal strengh, detectability and frequency of calls (ex: One species may have more than one vocalisation).
-Importance of accounting the habitat as songs to not propogate uniformaly accros them.
+[@ross2023] pour avoir les review déjà faites en pam...
+
+- Soundscape can provide indicators on the ecological processes or disturbances (cite plein d'artcile dont [@villanueva-rivera2011] [@deichmann2018], informe sur les reviews de dispo sur les PAM (la classique).
+  Avantage des PAM car peut faire du multitaxon, multi-espèce, can do scaling up spatially and oenvironmental sound producing.
+
+<!-- -->
+
+- PAM is increasingly used to map biodiversity in remote or challenging habitats such as tropical forest [@burivalova2019]
+
+<!-- -->
+
+- PAM can also en able data acquisition during seasons of heightened inaccessibility, such as during floods or rainy seasons, which often coincide with important life-history stages for vocalising birds and mammals [@szymanski2021]
+
+- PAM requires minimal manual parameter tuning and non invasive wildlife studies, monitor variety of cryptic and elusive species [@wrege2017] [@yusni2026]
+
+[@ross2023] PAM permits to study the disturbance with the same equipment as affected organisms.
+Methodological spatial scale-up, multi-taxa...
+Challenge with signal strengh and species dectability and frequencies of calls.
 Target Soundscape are afffected by non-target sound, within geophony or anthropophony.
 
-[@ross2023] Limitations arise from Identifying species specific vocalisations from acoustic recordings provides evidence for species presence at a given time and location, but determining true absences is more challenging.
-Strong limitations from survey design [@wood2021], equipment [@gibb2019]analysis..
+Beyond geographical remoteness,
 
-Beyond geographical remoteness, PAM can also en able data acquisition during seasons of heightened inaccessibility, such as during floods or rainy seasons, which often coincide with important life-history stages for vocalising birds and mammals [@szymanski2021]
+- In New Caledonian forests, the invasive ant Wasmannia auropunctata caused a reduction of local insect biodiversity, lead ing to impoverishment of the soundscape (\~80% cricket call decline) [@gasc2018]
 
-PAM is increasingly used to map biodiversity in remote or challenging habitats such as tropical forest [@burivalova2019]
-
-[@gasc2018] In New Caledonian forests, the invasive ant Wasmannia auropunctata caused a reduction of local insect biodiversity, lead ing to impoverishment of the soundscape (\~80% cricket call decline;
-
-[@ross2023] lots of new directions for the study of fundamental questions with PAM...
-
-[@scarpelli2020] Tropical ecosystems remains largely understudied, the relation between acoustic rich, complex composition [@donascimento2020] and landscape integrity are lacking.
+- [@scarpelli2020] Tropical ecosystems remains largely understudied, the relation between acoustic rich, complex composition [@donascimento2020] and landscape integrity are lacking.
 
 Insular ecosystems offer the opportunity to studied this relationship within a less complex framework ( ) and
 
-Pattern expection..
+In this study we investigate the relationship between soundscape variation and the acoustic avian community and habitats
 
-In this study we investigate the relationship between soundscape variation and the acoustic avian community.
+- Birds introduced are issued from specific families (e.g., Galliniformes,Columbidae, Fringillidae, Passeridae, Estrildidae and Sturnidae ..) introduced for hunting, aesthetic purposes with accidental or intentional releases of cage [@blackburn2001][@dyer2017]
 
-Birds introduced tends to be from specific families (e.g., Galliniformes,Columbidae, Fringillidae, Passeridae, Estrildidae and Sturnidae ..) introduced for hunting, aesthetic purposes with accidental or intentional releases of cage [@blackburn2001][@dyer2017]
-
-This species shows peculiar traits such as granivoes and are adapted to urban and agricultural landscapes, whereas native birds from oceanic island tends to include frugivore and insectivore species occuring in forests [@soares2021]
+- This species shows peculiar traits such as granivoes and are adapted to urban and agricultural landscapes, whereas native birds from oceanic island tends to include frugivore and insectivore species occuring in forests [@soares2021]
 
 In Tahiti a single man introduced lot of species ""
-
-requiring minimal manual parameter tuning and non invasive wildlife studies, monitor variety of cryptic and elusive species [@wrege2017] [@yusni2026]
-
-[@sueur2008] Acoustic indices can be rapidly extracted from hundreds of hours of recordings
 
 Limited studies on insular tropical terrestrial soundscape
 
 The acoustic habitat: The sonic context in which species are living
 
+- Sonotope or acoustic habitats (he sonic context in which species are living) , as recently argued by Merchant et al. (2015), are the result of natural and man-made processes, and differ according to the location, creating specific acoustic identities [@farina2016].
+
+- A sonotope is an important ingredient in the habitat quality of acoustic communities and its assessment represents a good proxy for predicting and explaining the distribution of species in space and time.
+  [@farina2016]
+
+- This signature can be considered equivalent to a biological code (Barbieri, 2015) and is species- and communityspecific (Farina and Pieretti, 2014a; Malavasi et al., 2014).
+
+Moreover, the three components of a sonotope may be present, each with a different importance, inside a single sonotope.
+For instance, in urban landscapes, technophonies (often also called anthrophonies) will likely contribute more than 90% of the sound energy (Joo et al., 2011),
+
+- The soundtope (Soundscape level) model is equivalent to the acoustic community concept but the soundtope model incorporates environmental conditions not considered by the acoustic community model used to describe only biophonic processes (Que la biophony) (Fig. 5).
+  In fact, the composition of an acoustic community is a good proxy for a broad appraisal of the biodiversity at a location.
+  [@farina2016]
+
+- Today it is possible to describe the acoustic composition of an acoustic community on a large scale [@towsey2014]
+
+- Our study stands at the ecoacoustic level, but aims to focus the spatial variation of the birds acoustic community in Tahiti, diverging in space by the native or introduced origin of it's species.
+
 \## M & M
+
+## Résultat
+
+Our results from automatic detection showed a higher native species richness in forest sites (... species) than introduced in urbna areas (... species).
 
 ## Discussion
 
@@ -112,3 +140,11 @@ In tropical landscapes, patterns in acoustic indices may depend on the sampling 
 Soundscape is very important for places for human relevantness to a place and for xhat bird species hear in their communication.
 Here, we aim to adress a discarded issue with introduced species having imapct on the ..
 of a place and on natve bird species
+
+Homogenisation of the soundscape has a lost of resilience , acoustic heritage and interferenc in communication in birds
+
+Introduced species are numerous, surpassing original native diversity plus typical vocally active species, due to their family origin or origin of trade (bird song in cage trade)
+
+Therefore, species whose acoustic signals are similar to competitors' one may either become excluded from successfully signalling at a particular time or frequency, or may employ vocal compensation to partition their acoustic space to minimize competition [@tennessen2016]
+
+FInd an article on the acoustic complecity of some bird families, that soud match with the most introduced ones.

@@ -22,15 +22,21 @@ execute:
 
 *Study area*
 
-The study was conducted in Tahiti, French Polynesia, a ..
-oceanic island.
+The study was conducted in Tahiti, the largest island of French Polynesia, a ..
+ha oceanic island.
+
 The vegetation are.....
-The climate displays ..., with average temperature variation ranging from ..
+
+The climate is..
+..., with average temperature variation ranging from ..
 °C to °C and rainfall precipitation varies ranging from ..
 mm to ...
 mm.
+Marked sesonality?
+
 Using data collection between 2024 and 2026, 69 sites were monitored.
 Main habitat classifiction range from Forest (n=..), Rural (n=...), Sub-urban (n=....) and Urban (n=...).
+(pourquoi pas une belle vu de haut de chaque type de sites.
 
 *Acoustic data collection*
 
@@ -39,13 +45,22 @@ avces au moins la composition urbaine ca serait cool.
 
 Acoustic data was collected from..
 to .., with SongMeter SM2 and SM4 digital recording devices (Wildlife Acoustics, Maynard, MA, USA).
-Devices were programmed to record continuously, 14 h a day, at a sampling rate of kHz.
-In each plot we collected within our data collection period, resulting in ...
+We surveyed 69 sites ( forest, ... rural subrubani, .. urbain ), majorly placed following a altitudinal gradientDevices were programmed to record continuously, at a sampling rate of kHz.
+In each plot we collected a unique period, resulting in ...
 mean per site ( h total).
+Acoustic recording units were place a t 1,5 m height in tress
+
+Continuous recordings occured for a ...
+at each site between ..
+2025 and ...
+2026.
+recording were continuous (format, sampling rate, monophonic, 16 bits)
+
+In total, we obtained 1568 10-min files for all 69 sites, or a total effort of ...h of continuous recording.
 
 *Soundscape index metrics*
 
-Using files cleaned of wind, rain, and device glitches, we computed six of the most common acoustic indices used for biodiversity monitoring from the ‘soundecology’ package in R (Villanueva-Rivera and Pijanowski, 2018 soundecology), as multi-index studies with these indices have been shown to be more effective than single index investigations
+Using not cleaned files of wind, rain, and device glitches; we computed nine relevant acoustic indices (......) (Table used for soundscape and bird acoustic community monitoring from the ‘soundecology’ ...package in R (Villanueva-Rivera and Pijanowski, 2018 soundecology? nd the seewave (Sueur, Aubin, and Simons 2008), as multi-index studies with these indices have been shown to be more effective than single index investigations
 
 *Habitat metrics*
 
@@ -59,19 +74,27 @@ Felix point count surveys and automatic classifier detections.
 *Data analysis*
 
 All statistical analyses were performed in R v.().
-To investigate the relationship between acoustic indices and the metrics of avian composition, we used generalized linear mixed-effects models (GLMER) to model each acoustic index (....) individually as response variable, one assemblage metric at a time, the hard surface area and open herbaceaous cover as independant fixed effect, and sites and commune as random effects.
+To investigate the relationship between acoustic indices and the metrics of avian composition, we used generalized linear mixed-effects models (GLMER) to model each acoustic index (....) individually as response variable, one assemblage bird metric at a time, the hard surface area and open herbaceaous cover as independant fixed effect, and sites and commune as random effects.
 Models included the a control fixed effect for the time (hour of the day to account for temporal autocorrelation. Models uses a ... distribution with a ... function
+
+A correlation analysis was ran to evaluate associations between all indices.
+
+Nevertheless, the testSpatialAutocorrelation function in DHARMa was used to test model residuals for spatial autocorrelation
 
 *Bird assemblage metrics in response to habitat characteristic*
 
 Hbaitat parameters as direct drivers of bird assemblage was investigated using habitat variables as independant variables in GLMER).
 The assemblage for species richness and native species presence or absence were each modelled independently as response variables using ...
 distributions.
-All GLMER were made using the "..."package (bib..)
+All GLMER were made using the "..."package (bib..).
+Description of Bird community here..
 
-*Acoustic indices in response to bird assemblage and habitat*
+*Acoustic indices in response to bird assemblage and habitat metrics*
 
 To investigate if acoustic indices relfect metrics of native/introduced bird assemblage, GLMER were used to model each acoustic indices individually in reponse to the following independant variables: one assembalge metric at a time, hsa and herbaceous cover.
 All models used a ...
 distribution with a ...
 function.
+
+Ca serait cool de pouvoir tester à quel altitude on commence à avoir un switch dans les valeurs montrant qu'on passe un un autre soundtope?
+ou qu'on est donc sur un soundtone.

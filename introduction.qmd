@@ -20,13 +20,57 @@ execute:
   cache: true
 ---
 
-General context of Soundscape and ecoacoustic..
+*Insular environment and invasive species* Insular and tropical island with a lot of introduction Description and Influence en introduced species in insular ecosystems
 
-That in indular environment
+- Non-native species effects on island native biodiversity are well-knowned [@evans2018]
 
-Description and Influence en introduced species in insular ecosystems
+- Avian species have been among the most concerned taxa within oceanic islands [@spatz2017]
 
-Role wihtin soundscape and theory of acoustic ncihes about bird species and human In TAHITI
+- A major driver of species assemblages is interspecific competition (McGill, Enquist, Weiher, & Westoby, 2006)
 
-Aims of the study, point of the stdy and big questions
+- Some case, as with the introduction of the Japanese white-eye (Zosterops japonicus) in Hawai’i, showed competition from non-native species affected native bird populations (Blackburn, Lockwood, & Cassey, 2009),
 
+- Source for acoustic competition on island, or in that direction ??
+  article alois robert, article sur différence dans les traits dans un système d'île.
+  Nous on veut montrer que ça peut jouer sur la compétition
+
+- Combined effect of the growing loss of native ecosystems and the continued introduction of birds species, especially of forest-dwelling birds on oceanic islands intensify the meance of non-native competition threats [@sax2007]
+
+- Functionnal homogenisation of island bird assemblages is promoted by the introduction of functionnaly similar bird species [@sobral2016] 'Thèse soares .
+  Could similar pattern stand out throughout acoustic pattern from island bird assemblages, considering losing unique bird vocaliser on island ?
+
+- Oceanic island are small sized, unique insluar biodiversity and simplified communities, shaped by human influence that stands out as unique living laboratories useful to study the impacts of human activities [@whittaker2017][@russell2019]
+
+- Islands by their discreetness tends to be more sensitive to species introductions and extensive anthropogenic land-used modification [@whittaker2017] [@spatz2017] [@russell2019]
+
+- Invasion and extensive urbanisation can shape avian community assemblages [@rogers2021]
+
+Oceanic Island
+
+Has theather of introduction and urbanisation.
+
+Acoustic
+
+- Diminished bird richness on islands reflect fewer vocalizing species, resulting in less saturated soundscapes [@robert2019].
+  So, acoustic interferences are anticipated to lessened on islands.
+  The latter can mask signal frequencies, reduce perception and discrimination [@lohr2003]
+
+*Tahiti case explain urbanisation and number of introduces speices*
+
+Numerous introduction
+
+Role wihtin soundscape and theory of acoustic ncihes about bird species and human
+
+*General context of Soundscape and ecoacoustic..*
+
+- Urbanisation and invasion have direct impact on bird assembalges and indirect impact via the soundscape (technophonies contribute to more than 90% of the sound energy of antropohony (Joo et al., 2011), .
+
+Potentially affecting signal frequencies, perception and discrimination for native bird assemblages.
+
+Acoustic indices...
+
+Trough combined effect of urbanisation and introduced species, we expected those sites to have more saturated and complex soundscape compared to forested sites
+
+Focussing on bird, introduced bird species are thought to have a more important acoustic impact (typical family introduced, bird cage, mainland origin. Affecting the soundscape trough activity, intensity compared to native bird.
+
+Aims of the study, point of the stdy and big questions, in Tahiiti
